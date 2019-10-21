@@ -17,4 +17,4 @@ nodeSelector:
   app: db
 
 storage:
-  hostPath: "/mysql_volume"
+  hostPath: "/mysql_volume2"

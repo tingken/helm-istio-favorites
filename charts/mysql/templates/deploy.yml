@@ -4,19 +4,19 @@ metadata:
   name: "{{ .Release.Name }}-mysql-deploy"
   namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ .Release.Name }}
-    component: "{{ .Release.Name }}-mysql-deploy"
+    release: {{ .Release.Name }}
+    app: "{{ .Release.Name }}-mysql-deploy"
 spec:
   replicas: {{ .Values.global.replicaCount.mysql }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
-      component: "mysql-{{ .Release.Name }}"
+      release: {{ .Release.Name }}
+      app: "mysql-{{ .Release.Name }}"
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
-        component: "mysql-{{ .Release.Name }}"
+        release: {{ .Release.Name }}
+        app: "mysql-{{ .Release.Name }}"
     spec:
       containers:
       - name: mysql
@@ -24,7 +24,6 @@ spec:
         imagePullPolicy: {{ .Values.global.image.mysql.pullPolicy }}
         ports:
         - containerPort: 3306
-          hostPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "root"

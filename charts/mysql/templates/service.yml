@@ -8,5 +8,5 @@ spec:
   - port: 3306
     name: mysql
   selector:
-    app: {{ .Release.Name }}
-    component: "mysql-{{ .Release.Name }}"
+    release: {{ .Release.Name }}
+    app: "mysql-{{ .Release.Name }}"

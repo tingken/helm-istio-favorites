@@ -8,6 +8,6 @@ spec:
   - port: 8094
     name: look-record
   selector:
-    app: {{ .Release.Name }}
-    component: web-look-record
+    release: {{ .Release.Name }}
+    app: web-look-record
 

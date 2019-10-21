@@ -8,6 +8,6 @@ spec:
   - port: 8096
     name: comment
   selector:
-    app: {{ .Release.Name }}
-    component: web-comment
+    release: {{ .Release.Name }}
+    app: web-comment
 

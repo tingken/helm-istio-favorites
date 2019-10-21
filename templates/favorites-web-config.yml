@@ -63,7 +63,7 @@ data:
     logging.level.org.hibernate=in
     ######   logging config end ######
 
-    favorites.base.path=http://192.168.18.132/
+    favorites.base.path=http://10.80.17.54/
 
     ######   file path  begin ######
     static.url=/usr/share/nginx/html/
@@ -106,8 +106,8 @@ data:
     logging.level.org.hibernate=INFO
     ######   logging config end ###### 
 
-    favorites.base.path=http://192.168.18.132:30088/
-    forgotpassword.url=http://192.168.18.132:30088/newPassword
+    favorites.base.path=http://10.80.17.54:30088/
+    forgotpassword.url=http://10.80.17.54:30088/newPassword
 
     ######   file path  begin ######
     static.url=E:\\temp\\

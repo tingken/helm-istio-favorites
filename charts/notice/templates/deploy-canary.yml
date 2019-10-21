@@ -4,20 +4,20 @@ metadata:
   name: "{{ .Release.Name }}-notice-deploy-canary"
   namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ .Release.Name }}
-    component: "{{ .Release.Name }}-notice-deploy-canary"
+    release: {{ .Release.Name }}
+    app: "{{ .Release.Name }}-notice-deploy-canary"
 spec:
   replicas: {{ .Values.global.replicaCount.notice.canary }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
-      component: web-notice
+      release: {{ .Release.Name }}
+      app: web-notice
       canary: "true"
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
-        component: web-notice
+        release: {{ .Release.Name }}
+        app: web-notice
         canary: "true"
     spec:
       containers:
@@ -49,7 +49,7 @@ spec:
             podAffinityTerm:
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: release
                   operator: In
                   values:
                   - {{ .Release.Name }}

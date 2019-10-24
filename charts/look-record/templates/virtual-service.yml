@@ -1,0 +1,28 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: look-record-service
+  namespace: {{ .Release.Namespace }}
+spec:
+  hosts:
+    - look-record-service
+  http:
+  - route:
+    - destination:
+        host: look-record-service
+        subset: product
+      weight: {{ if .Values.global.product.weight }} {{ .Values.global.product.weight }} {{ else }} {{ .Values.product.weight }} {{ end }}
+    - destination:
+        host: look-record-service
+        subset: canary
+      weight: {{ if .Values.global.canary.weight }} {{ .Values.global.canary.weight }} {{ else }} {{ .Values.canary.weight }} {{ end }}
+  tcp:
+  - route:
+    - destination:
+        host: look-record-service
+        subset: product
+      weight: {{ if .Values.global.product.weight }} {{ .Values.global.product.weight }} {{ else }} {{ .Values.product.weight }} {{ end }}
+    - destination:
+        host: look-record-service
+        subset: canary
+      weight: {{ if .Values.global.canary.weight }} {{ .Values.global.canary.weight }} {{ else }} {{ .Values.canary.weight }} {{ end }}

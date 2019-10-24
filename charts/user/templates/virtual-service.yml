@@ -1,0 +1,28 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: user-service
+  namespace: {{ .Release.Namespace }}
+spec:
+  hosts:
+    - user-service
+  http:
+  - route:
+    - destination:
+        host: user-service
+        subset: product
+      weight: {{ if .Values.global.product.weight }} {{ .Values.global.product.weight }} {{ else }} {{ .Values.product.weight }} {{ end }}
+    - destination:
+        host: user-service
+        subset: canary
+      weight: {{ if .Values.global.canary.weight }} {{ .Values.global.canary.weight }} {{ else }} {{ .Values.canary.weight }} {{ end }}
+  tcp:
+  - route:
+    - destination:
+        host: user-service
+        subset: product
+      weight: {{ if .Values.global.product.weight }} {{ .Values.global.product.weight }} {{ else }} {{ .Values.product.weight }} {{ end }}
+    - destination:
+        host: user-service
+        subset: canary
+      weight: {{ if .Values.global.canary.weight }} {{ .Values.global.canary.weight }} {{ else }} {{ .Values.canary.weight }} {{ end }}

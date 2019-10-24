@@ -54,3 +54,9 @@ affinity:
           values:
           - "{{ .Release.Name }}"
       topologyKey: "kubernetes.io/hostname"
+
+product:
+  weight: 0
+canary:
+  weight: 0
+

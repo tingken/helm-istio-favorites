@@ -48,76 +48,76 @@ global:
         canary: 10.80.17.195/favorites/favorites-web
       tag: 
         product: 0.0.1-SNAPSHOT
-        canary: 0.0.1-SNAPSHOT
-      pullPolicy: IfNotPresent
+        canary: 0.1.0
+      pullPolicy: Always
     mysql:
       repository: mysql
       tag: 5.7
-      pullPolicy: IfNotPresent
+      pullPolicy: Always
     bookmark:
       repository: 
         product: 10.80.17.195/favorites/bookmark-service
         canary: 10.80.17.195/favorites/bookmark-service
       tag: 
         product: 0.0.1-SNAPSHOT
-        canary: 0.0.1-SNAPSHOT
-      pullPolicy: IfNotPresent
+        canary: 0.1.0
+      pullPolicy: Always
     comment:
       repository: 
         product: 10.80.17.195/favorites/comment-service
         canary: 10.80.17.195/favorites/comment-service
       tag: 
         product: 0.0.1-SNAPSHOT
-        canary: 0.0.1-SNAPSHOT
-      pullPolicy: IfNotPresent
+        canary: 0.1.0
+      pullPolicy: Always
     folder:
       repository: 
         product: 10.80.17.195/favorites/folder-service
         canary: 10.80.17.195/favorites/folder-service
       tag: 
         product: 0.0.1-SNAPSHOT
-        canary: 0.0.1-SNAPSHOT
-      pullPolicy: IfNotPresent
+        canary: 0.1.0
+      pullPolicy: Always
     follow:
       repository: 
         product: 10.80.17.195/favorites/follow-service
         canary: 10.80.17.195/favorites/follow-service
       tag: 
         product: 0.0.1-SNAPSHOT
-        canary: 0.0.1-SNAPSHOT
-      pullPolicy: IfNotPresent
+        canary: 0.1.0
+      pullPolicy: Always
     lookRecord:
       repository: 
         product: 10.80.17.195/favorites/look-record-service
         canary: 10.80.17.195/favorites/look-record-service
       tag: 
         product: 0.0.1-SNAPSHOT
-        canary: 0.0.1-SNAPSHOT
-      pullPolicy: IfNotPresent
+        canary: 0.1.0
+      pullPolicy: Always
     notice:
       repository: 
         product: 10.80.17.195/favorites/notice-service
         canary: 10.80.17.195/favorites/notice-service
       tag: 
         product: 0.0.1-SNAPSHOT
-        canary: 0.0.1-SNAPSHOT
-      pullPolicy: IfNotPresent
+        canary: 0.1.0
+      pullPolicy: Always
     praise:
       repository: 
         product: 10.80.17.195/favorites/praise-service
         canary: 10.80.17.195/favorites/praise-service
       tag: 
         product: 0.0.1-SNAPSHOT
-        canary: 0.0.1-SNAPSHOT
-      pullPolicy: IfNotPresent
+        canary: 0.1.0
+      pullPolicy: Always
     user:
       repository: 
         product: 10.80.17.195/favorites/user-service
         canary: 10.80.17.195/favorites/user-service
       tag: 
         product: 0.0.1-SNAPSHOT
-        canary: 0.0.1-SNAPSHOT
-      pullPolicy: IfNotPresent
+        canary: 0.1.0
+      pullPolicy: Always
 
 services: 
   folder: 

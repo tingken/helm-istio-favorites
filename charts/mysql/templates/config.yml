@@ -20,4 +20,4 @@ data:
     init-connect='SET NAMES utf8'
     init_connect='SET collation_connection = utf8_general_ci'
     skip-character-set-client-handshake
-    max_connections=5000
+    max_connections=1000

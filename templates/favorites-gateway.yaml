@@ -31,5 +31,9 @@ spec:
     route:
     - destination:
         host: favorites-web-service
-        port:
-          number: 8080
+        subset: product
+      weight: {{ if .Values.global.product.weight }} {{ .Values.global.product.weight }} {{ else }} {{ .Values.product.weight }} {{ end }}
+    - destination:
+        host: favorites-web-service
+        subset: canary
+      weight: {{ if .Values.global.canary.weight }} {{ .Values.global.canary.weight }} {{ else }} {{ .Values.canary.weight }} {{ end }}
